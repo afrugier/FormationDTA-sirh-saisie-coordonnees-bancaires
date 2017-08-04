@@ -24,6 +24,9 @@ function postBankData() {
         success: function (data) {
             alert("User with matricule [" + $("#matricule").val() + "] was updated");
             init();
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+            alert("User could not be updated. Check your data");
         }
     });
 };
