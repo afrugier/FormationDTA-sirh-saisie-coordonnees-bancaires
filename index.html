@@ -2,76 +2,102 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <title>SGP - saisie</title>
-    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+  <meta charset="utf-8">
+  <title>SGP - saisie</title>
+  <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
 
-    <script src="https://code.jquery.com/jquery-1.12.3.js"></script>
-    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-    <script src="app.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.3.js"></script>
+  <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+  <script src="app.js"></script>
 </head>
 
 <style>
-    #listeCollabs>.collab {
-        cursor: pointer;
-    }
+  #listeCollabs>.collab {
+    cursor: pointer;
+  }
 </style>
 
 <body class="container">
-    <h1>SGP - Saisie des coordonnées bancaires</h1>
-    <table class="table table-hover">
-        <thead>
-            <tr>
-                <td>Matricule</td>
-                <td>Nom</td>
-                <td>Prenom</td>
-            </tr>
-        </thead>
-        <tbody id="listeCollabs">
-        </tbody>
-    </table>
+  <h1>SGP - Saisie des coordonnées bancaires</h1>
 
-    <form class="form-horizontal col-xs-10 col-xs-offset-1 col-lg-12 col-lg-offset-0">
-        <div class="coordonneesBancairesBlock">
-            <h3>Coordonnées bancaires</h3>
+  <div class="filters container">
+    <!-- Select Basic -->
+    <div class="form-group row">
+      <label class="col-md-4 control-label" for="filterDepartement">Filtrer par département: </label>
+      <div class="col-md-4">
+        <select id="filterDepartement" name="filterDepartement" class="form-control">
+    						<option value="">Tous</option>
+    				</select>
+      </div>
+    </div>
 
-            <!-- Text input-->
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="banque">Banque</label>
-                <div class="col-md-4">
-                    <input id="banque" name="banque" placeholder="" class="form-control input-md" type="text">
-
-                </div>
-            </div>
-
-            <!-- Text input-->
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="bic">BIC</label>
-                <div class="col-md-4">
-                    <input id="bic" name="bic" placeholder="" class="form-control input-md" type="text">
-
-                </div>
-            </div>
-
-            <!-- Text input-->
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="iban">IBAN</label>
-                <div class="col-md-4">
-                    <input id="iban" name="iban" placeholder="" class="form-control input-md" type="text">
-                </div>
-            </div>
+    <!-- Text input-->
+    <div class="form-group row">
+      <label class="col-md-4 control-label" for="filterNom">Rechercher par nom: </label>
+      <div class="col-md-4">
+        <div class="input-group">
+          <input id="filterNom" name="filterNom" placeholder="" class="form-control input-md" type="text" value="">
+          <span class="input-group-btn">
+            <button id="emptyFilterNom" class="btn btn-secondary" type="button">X</button>
+          </span>
         </div>
-        <!-- /coordonneesBancairesBlock -->
+      </div>
+    </div>
+  </div>
 
-        <!-- Button -->
-        <div class="form-group">
-            <label class="col-md-4 control-label" for="creer"></label>
-            <div class="col-md-4">
-                <button id="sauvegarderBtn" name="creer" class="btn btn-primary">Sauvegarder</button>
-            </div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <td>Matricule</td>
+        <td>Nom</td>
+        <td>Prenom</td>
+      </tr>
+    </thead>
+    <tbody id="listeCollabs">
+    </tbody>
+  </table>
+
+  <form class="form-horizontal col-xs-10 col-xs-offset-1 col-lg-12 col-lg-offset-0">
+    <div class="coordonneesBancairesBlock">
+      <h3>Coordonnées bancaires</h3>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="banque">Banque</label>
+        <div class="col-md-4">
+          <input id="banque" name="banque" placeholder="" class="form-control input-md" type="text">
+
         </div>
-        <input type="hidden" id="matricule" value="">
-    </form>
+      </div>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="bic">BIC</label>
+        <div class="col-md-4">
+          <input id="bic" name="bic" placeholder="" class="form-control input-md" type="text">
+
+        </div>
+      </div>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="iban">IBAN</label>
+        <div class="col-md-4">
+          <input id="iban" name="iban" placeholder="" class="form-control input-md" type="text">
+        </div>
+      </div>
+    </div>
+    <!-- /coordonneesBancairesBlock -->
+
+    <!-- Button -->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="creer"></label>
+      <div class="col-md-4">
+        <button id="sauvegarderBtn" name="creer" class="btn btn-primary">Sauvegarder</button>
+      </div>
+    </div>
+    <input type="hidden" id="matricule" value="">
+  </form>
 </body>
 
 </html>
